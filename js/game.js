@@ -235,7 +235,7 @@ function render(){
     lastKey=key;
     $('#app').innerHTML=(VIEWS[S.phase]||VIEWS.lobby)();
     enterAnim();
-    const qr=$('#qr');if(qr&&window.QRCode){try{new QRCode(qr,{text:inviteLink(),width:150,height:150,colorDark:'#120f1f',colorLight:'#ffffff'})}catch(e){}}
+    const qr=$('#qr');if(qr&&window.QRCode){try{new QRCode(qr,{text:inviteLink(),width:150,height:150,colorDark:'#0b0a0d',colorLight:'#ffffff'})}catch(e){}}
     if(S.phase==='reveal'&&prevPhase!=='reveal'){const h=S.history[S.history.length-1]||{};buzz([20,60,20]);SFX.reveal(Object.keys(h.counts||{}).length,(h.pts||{})[me.id]===1);if((h.top||[]).includes(me.id))confetti(110,900)}
     if(S.phase==='end'&&prevPhase!=='end'){confetti(200,1500);SFX.fanfare(1.2);setTimeout(()=>confetti(120),2600);if(window.recordMatch)recordMatch()}
     if(S.phase==='vote'&&prevPhase!=='vote'){buzz(20);SFX.chime()}
